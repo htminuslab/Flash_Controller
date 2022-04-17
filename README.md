@@ -26,6 +26,7 @@ The gw1n-9 flash primitive contains 38 pages of 2048 bytes each ((38 * 2048 * 8)
 Erasing a page is similar to writing to flash, the CPU unlocks the flash, write to 256KB+page_number and then polls the busy bit until it is cleared. The READY signal is asserted immediately as the busy bit is used to indicate when the erase cycle is done. Note that an erase cycle can take more than 100ms per page!
 
 
+![Top Level](https://github.com/HansTiggeler/Flash_Controller/blob/main/top.PNG?raw=true)
  
 ## Pin Description
 
@@ -54,6 +55,46 @@ The sim directory contains a simple .do file for Modelsim/Questa. To run the sim
 vsim -c -do "do run.do;quit -f"
 ```
 
+The testbench will erase page0 following by writing and reading back 3 test values.
+
+```
+# do run.do
+# Model Technology ModelSim DE-64 vmap 2022.1 Lib Mapping Utility 2022.01 Jan 29 2022
+# vmap gw1n H:/simlib/Gowin/gw1n
+# Copying c:/modelsim_de_2022/win64pe/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# Creating Work Directory
+# vsim -quiet FlashCTRL_Top_tb -L gw1n
+# //  ModelSim DE-64 2022.1 Jan 29 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim DE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# ** Note: Erasing Page0
+#    Time: 150 ns  Iteration: 0  Instance: /flashctrl_top_tb/U_TEST
+# ** Note: Page0 has been erased
+#    Time: 100020390 ns  Iteration: 0  Instance: /flashctrl_top_tb/U_TEST
+# ** Note: Reading 11223344...pass
+#    Time: 100135330 ns  Iteration: 0  Instance: /flashctrl_top_tb/U_TEST
+# ** Note: Reading 55667788...pass
+#    Time: 100135430 ns  Iteration: 0  Instance: /flashctrl_top_tb/U_TEST
+# ** Note: Reading 99AABBCC...pass
+#    Time: 100135530 ns  Iteration: 0  Instance: /flashctrl_top_tb/U_TEST
+# ** Note: stop
+#    Time: 100135530 ns  Iteration: 0  Instance: /flashctrl_top_tb/U_TEST
+# Break in Process line__54 at ../testbench/flashctrl_top_tester.vhd line 168
+# Stopped at ../testbench/flashctrl_top_tester.vhd line 168
+# quit -f
+# Errors: 0, Warnings: 0
+```
 
 ## Troubleshooting
 
