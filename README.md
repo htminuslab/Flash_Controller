@@ -2,7 +2,7 @@
 
 This repository contains a simple Gowin gw1n-9 FPGA Flash Controller in VHDL.
 
-![Tang Nano 9K Development Board](https://github.com/HansTiggeler/Flash_Controller/blob/main/tangnano9k.png)
+![Tang Nano 9K Development Board](https://github.com/HansTiggeler/Flash_Controller/blob/main/tangnano9k.PNG?raw=true)
 
 The Gowin gw1n family of FPGA's have embedded flash which can be used for user designs. 
 The largest Flash IP block of 608Kbits can be found on the gw1n-9 family which is used for this project.
