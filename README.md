@@ -7,7 +7,7 @@ This repository contains a simple Gowin gw1n-9 FPGA Flash Controller in VHDL.
 The Gowin gw1n family of FPGA's have embedded flash which can be used for user designs. 
 The largest Flash IP block of 608Kbits can be found on the gw1n-9 family which is used for this project.
 
-*The timing used is based on the Gowin **UG295-1.3E, 11/14/2021**
+*The timing used is based on the Gowin **[UG295-1.3E, 11/14/2021](http://cdn.gowinsemi.com.cn/UG295E.pdf)**
 There are a few typos in the doc, **Trecv** is not specified but most likely should be **Trcv**, similarly **Tnhv** should be **Tnvh***.
 
 
@@ -55,7 +55,7 @@ The sim directory contains a simple .do file for Modelsim/Questa. To run the sim
 vsim -c -do "do run.do;quit -f"
 ```
 
-The testbench will erase page0 following by writing and reading back 3 test values.
+A simple testbench will erase page0 following by writing and reading back 3 test values.
 
 ```
 # do run.do
