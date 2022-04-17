@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 --  Gowin Flash Controller                                                                                                                                                            
 --                                                                           
---                                                     
+--  https://github.com/HansTiggeler/Flash_Controller                                                   
 ---------------------------------------------------------------------------------------------------
 --                                                    
 ---------------------------------------------------------------------------------------------------
@@ -42,7 +42,7 @@ ENTITY FlashCTRL IS
       XE       : OUT  std_logic;
       YADR     : OUT  std_logic_vector (5 DOWNTO 0);
       YE       : OUT  std_logic);
-END ENTITY FlashCTRL ;
+END ENTITY FlashCTRL;
 
 --
 ARCHITECTURE rtl OF FlashCTRL IS

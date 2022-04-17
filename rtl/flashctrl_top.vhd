@@ -1,8 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 --  Gowin Flash Controller                                                                           
 --                                                                                                                  
---                                       
---                                                                           
+--  https://github.com/HansTiggeler/Flash_Controller                                                                                                            
 ---------------------------------------------------------------------------------------------------
 --              
 ---------------------------------------------------------------------------------------------------
@@ -28,11 +27,7 @@ ENTITY FlashCTRL_Top IS
       RESETN   : IN     std_logic;
       WR       : IN     std_logic;
       DBUSO    : OUT    std_logic_vector (31 DOWNTO 0);
-      READY    : OUT    std_logic
-   );
-
--- Declarations
-
+      READY    : OUT    std_logic);
 END ENTITY FlashCTRL_Top ;
 
 ARCHITECTURE struct OF FlashCTRL_Top IS
