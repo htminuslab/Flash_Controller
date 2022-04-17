@@ -25,7 +25,7 @@ For writing the CPU first "unlocks" the flash by writing a 1 to the flash unlock
 The gw1n-9 flash primitive contains 38 pages of 2048 bytes each ((38 * 2048 * 8)/1024=608Kb). To make the erase simple each flash page is mapped to a single memory location starting at 0x200000 (256KByte). To erase a page the CPU simple write a dummy value to address 256KB+page_number (A17=1 indicates accessing a page location). 
 Erasing a page is similar to writing to flash, the CPU unlocks the flash, write to 256KB+page_number and then polls the busy bit until it is cleared. The READY signal is asserted immediately as the busy bit is used to indicate when the erase cycle is done. Note that an erase cycle can take more than 100ms per page!
 
-![Pin Out](https://github.com/HansTiggeler/Flash_Controller/blob/main/top.PNG?raw=true)
+
  
 ## Pin Description
 
