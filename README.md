@@ -2,12 +2,12 @@
 
 This repository contains a simple Gowin gw1n-9 FPGA Flash Controller in VHDL.
 
-<img src="tangnano9k.png" alt="Tang Nano 9K Development Board"/>  
+<img src="tangnano9k.PNG" alt="Tang Nano 9K Development Board"/>  
 
 The Gowin gw1n family of FPGA's have embedded flash which can be used for user designs. 
 The largest Flash IP block of 608Kbits (**FLASH608K**) can be found on the gw1n-9 family which is used for this project.
 
-<img src="GowinFlashTable.png" alt="Gowin gw1n Embedded Flash"/>  
+<img src="GowinFlashTable.PNG" alt="Gowin gw1n Embedded Flash"/>  
 
 *The timing used is based on the Gowin **[UG295-1.3E, 11/14/2021](http://cdn.gowinsemi.com.cn/UG295E.pdf)**
 There are a few typos in the doc, **Trecv** is not specified but most likely should be **Trcv**, similarly **Tnhv** should be **Tnvh***.
@@ -27,7 +27,7 @@ For writing the CPU first "unlocks" the flash by writing a 1 to the flash unlock
 The gw1n-9 flash primitive contains 38 pages of 2048 bytes each ((38 * 2048 * 8)/1024=608Kb). To make the erase simple each flash page is mapped to a single memory location starting at 0x200000 (256KByte). To erase a page the CPU simple write a dummy value to address 256KB+page_number (A17=1 indicates accessing a page location). 
 Erasing a page is similar to writing to flash, the CPU unlocks the flash, write to 256KB+page_number and then polls the busy bit until it is cleared. The READY signal is asserted immediately as the busy bit is used to indicate when the erase cycle is done. Note that an erase cycle can take more than 100ms per page!
 
-<img src="top.png" alt="Top Level Design"/>   
+<img src="top.PNG" alt="Top Level Design"/>   
  
 ## Pin Description
 
